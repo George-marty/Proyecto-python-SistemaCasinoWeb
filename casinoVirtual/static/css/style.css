@@ -1,0 +1,45 @@
+body{
+    font-family: fantasy;
+    color: blue;
+    background-color: coral;
+}
+
+.encabezado{
+    border-radius: 23px;
+    text-align: center;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding:  1rem 2rem;
+    color: white;
+}
+.navegacion_enlaces{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+.navegacion_enlaces a{
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navegacion_enlaces a:hover {
+    color: #00bcd4
+}
+
+
+.principal_base{
+    text-align: center;
+}
+.pie_pagina{
+    text-align: center;
+    
+}
