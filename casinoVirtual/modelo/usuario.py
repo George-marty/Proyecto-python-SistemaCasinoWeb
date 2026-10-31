@@ -16,17 +16,16 @@ def obtener_correo_usuario(correo):
     
     
 """
-Verifica si el usuario es correcto con sus datosy contraseñas, devuelve la info de una tabla del usuario seleccionado del correo
+Verifica si el usuario es correcto con sus datos y contraseñas, devuelve la info de una tabla del usuario seleccionado del correo
 """
 
 def verificar_login(correo,contraseña):
-    cursor = obtener_conexion()
+    
     usuario = obtener_correo_usuario(correo)
     if usuario is None:
         return None
     if check_password_hash(usuario["password_hash"],contraseña):
-        variable = obtener_correo_usuario()
-        cursor.close()
+        
         return usuario
     return None
 
