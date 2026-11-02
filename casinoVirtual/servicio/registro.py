@@ -1,5 +1,6 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from db import obtener_conexion
+
 import mysql.connector
 
 def registrar_usuario(correo, contraseña, nombre, telefono, direccion, fecha_nacimiento):
@@ -12,8 +13,10 @@ def registrar_usuario(correo, contraseña, nombre, telefono, direccion, fecha_na
         )
         id_usuario = cursor.lastrowid
        
-
+        
+            
         # INSERT en Usuario_Detalle con id_usuario
+        
         cursor.execute(
             "INSERT INTO usuario_detalle (Usuario_idUsuario, nombre,telefono,direccion,fecha_nacimiento) VALUES (%s,%s,%s,%s,%s)",
             (id_usuario,nombre,telefono,direccion,fecha_nacimiento,)
@@ -36,3 +39,4 @@ def registrar_usuario(correo, contraseña, nombre, telefono, direccion, fecha_na
     finally:
         cursor.close()
         conexion.close()
+

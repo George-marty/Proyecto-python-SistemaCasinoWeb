@@ -1,1 +1,7 @@
-/.venv
+.venv/
+__pycache__/
+*.pyc
+config.py
+.env
+ejercicio.txt
+txt.md

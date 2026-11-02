@@ -8,11 +8,14 @@ from db import obtener_conexion
 trae una consulta simple sobre informacion del usuario, buscando por correo
 """
 def obtener_correo_usuario(correo):
-    
-    cursor = obtener_conexion().cursor(dictionary=True)
-    cursor.execute("SELECT idUsuario,rol, correo, password_hash FROM usuario WHERE correo = %s",(correo,))
-    resultado = cursor.fetchone()
-    return resultado
+    conexion = obtener_conexion()
+    cursor = conexion.cursor(dictionary=True)
+    try:
+        cursor.execute("SELECT idUsuario,rol, correo, password_hash FROM usuario WHERE correo = %s",(correo,))
+        return cursor.fetchone()
+    finally:
+        cursor.close()
+        conexion.close()
     
     
 """
