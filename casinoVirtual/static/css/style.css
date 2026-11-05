@@ -1,0 +1,319 @@
+/* --- Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa; /* Fondo blanco/gris muy claro */
+    color: #111111;            /* Texto principal negro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Barra de Navegación (Navbar) --- */
+header {
+    background-color: #000000; /* Fondo negro elegante */
+    border-bottom: 3px solid #e50914; /* Línea de acento rojo casino */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e50914; /* Rojo vibrante */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Botón Panel (Estilo sutil blanco/negro) */
+.panel-link {
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+}
+
+.panel-link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Botón Iniciar Sesión */
+.login-link {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.login-link:hover {
+    background-color: #333333;
+}
+
+/* Botón Registrarse (Protagonista en rojo) */
+.register-link {
+    color: #ffffff;
+    background-color: #e50914; /* Rojo */
+}
+
+.register-link:hover {
+    background-color: #b20710; /* Rojo más oscuro al pasar el cursor */
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+/* Botón de Cerrar Sesión */
+.logout-link {
+    color: #ffffff;
+    background-color: #333333;
+    border: 1px solid #555555;
+}
+
+.logout-link:hover {
+    background-color: #e50914; /* Se pone rojo al pasar el cursor */
+    border-color: #e50914;
+}
+
+/* --- Contenedor Principal --- */
+.main-container {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid #222;
+}
+
+/* --- Estilos para la Página de Bienvenida --- */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero-section {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 15px;
+}
+
+.hero-section .highlight {
+    color: #e50914; /* Rojo casino */
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-main {
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: #b20710;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #111111;
+    border: 2px solid #111111;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* --- Advertencia Estilo Paquete de Cigarros --- */
+.warning-box {
+    background-color: #ffffff;
+    border: 3px solid #111111; /* Borde grueso y fuerte */
+    border-left: 10px solid #e50914; /* Franja roja lateral de alerta */
+    max-width: 600px;
+    width: 100%;
+    padding: 20px 25px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.warning-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #e50914;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.warning-text {
+    font-size: 0.85rem;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.warning-text strong {
+    color: #111111;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* --- Estilos Genéricos para Formularios (Agregar Tarjeta, Login, etc.) --- */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.form-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #e50914; /* Toque rojo casino */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+}
+
+.form-card h2 {
+    font-size: 1.8rem;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.casino-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.input-group input, 
+.input-group select {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #fcfcfc;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #e50914; /* Se ilumina en rojo al escribir */
+    background-color: #ffffff;
+}
+
+.btn-submit {
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #b20710;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    color: #e50914;
+    text-decoration: underline;
+}

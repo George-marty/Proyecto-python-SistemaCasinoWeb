@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Tarjeta - Casino Virtual{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form-card">
+        <h2>Registrar Tarjeta</h2>
+        <p class="subtitle">Asocia una tarjeta para gestionar tus fondos de forma segura</p>
+
+        <!-- Formulario para la tarjeta -->
+        <form action="{{ url_for('billetera.tarjeta') }}" method="POST" class="casino-form">
+            
+            <!-- Tipo de Tarjeta (Select basado en el ENUM de tu BD) -->
+            <div class="input-group">
+                <label for="tipo">Tipo de Tarjeta</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="VISA">VISA</option>
+                    <option value="MASTERCARD">MASTERCARD</option>
+                </select>
+            </div>
+
+            <!-- Número de Tarjeta -->
+            <div class="input-group">
+                <label for="numero_tarjeta">Número de Tarjeta</label>
+                <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="1234567890123" maxlength="16" required>
+            </div>
+
+            <!-- Fecha de Vencimiento -->
+            <div class="input-group">
+                <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+                <input type="text" id="fecha_vencimiento" name="fecha_vencimiento" placeholder="MM/AA" maxlength="5" required>
+            </div>
+            {% if error %}<p class="error">{{ error }}</p>{% endif %}
+            <!-- Botón de Envío -->
+            <button type="submit" class="btn-submit">Guardar Tarjeta</button>
+        </form>
+
+        <div class="form-footer">
+            <a href="{{ url_for('billetera.panel') }}">← Volver al Panel</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

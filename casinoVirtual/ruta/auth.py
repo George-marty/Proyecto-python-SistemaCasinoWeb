@@ -20,7 +20,7 @@ def login():
             session['idUsuario'] = usuario['idUsuario']
             session['rol'] =  usuario['rol']
             
-            return redirect(url_for('panel'))
+            return redirect(url_for('billetera.panel'))
         return render_template('login.html', error="Correo o contraseña incorrectos")
     return render_template('login.html')
 

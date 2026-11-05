@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Casino Virtual{% endblock %}</title>
+    <!-- Enlace al archivo CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Fuente de Google para mejor estética -->
+   
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">🎲 Casino<span>Virtual</span></a>
+            </div>
+            <ul class="nav-links">
+    {% if session.get('idUsuario') %}
+        <!-- Si el usuario está logueado -->
+        <li><a href="{{ url_for('billetera.panel') }}" class="nav-btn panel-link">Panel</a></li>
+        <!-- Botón de Cerrar Sesión (Apunta a tu ruta de logout) -->
+        <li><a href="{{ url_for('auth.logout') }}" class="nav-btn logout-link">Cerrar Sesión</a></li>
+    {% else %}
+        <!-- Si el usuario NO está logueado -->
+        <li><a href="{{ url_for('auth.login') }}" class="nav-btn login-link">Iniciar Sesión</a></li>
+        <li><a href="{{ url_for('auth.register') }}" class="nav-btn register-link">Registrarse</a></li>
+    {% endif %}
+</ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal Dinámico -->
+    <main class="main-container">
+        {% block content %}
+        <!-- Aquí se inyectará el contenido de las otras vistas -->
+        {% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Casino Virtual - Proyecto Académico. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

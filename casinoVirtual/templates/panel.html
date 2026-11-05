@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión - Casino Virtual{% endblock %}
+
+{% block content %}
+<div class="panel-container">
+    <div class="panel-card">
+        <h2>Panel de Usuario</h2>
+        <p class="subtitle">Resumen de tu cuenta y saldos actuales</p>
+        
+        <!-- Cuadro con la información del usuario -->
+        <div class="user-info-box">
+            <div class="info-group">
+                <span class="label">Nombre:</span>
+                <span class="value">{{ usuario.nombre }}</span>
+            </div>
+            <div class="info-group">
+                <span class="label">Saldo Virtual:</span>
+                <span class="value saldo-v">${{ usuario.saldo_virtual }}</span>
+            </div>
+            <div class="info-group">
+                <span class="label">Saldo Casual:</span>
+                <span class="value">${{ usuario.saldo_casual }}</span>
+            </div>
+            <div class="info-group">
+                <span class="label">Última Actualización:</span>
+                <span class="value">{{ usuario.ultima_actualizacion }}</span>
+            </div>
+        </div>
+
+        <!-- Botones de acción rápida -->
+        <div class="panel-actions">
+            <a href="#" class="btn-action">Recargar Saldo</a>
+            <a href="{{ url_for('billetera.tarjeta') }}" class="btn-action secondary">Agregar Tarjeta</a>
+        </div>
+        
+        <!-- Botón secundario para historial u otras opciones si lo requieres abajo -->
+        <div class="panel-actions" style="margin-top: 15px;">
+            <a href="#" class="btn-action secondary" style="width: 100%;">Ver Historial</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

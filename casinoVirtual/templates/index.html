@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenido - Casino Virtual{% endblock %}
+
+{% block content %}
+<div class="welcome-container">
+    <!-- Sección Hero / Saludo Principal -->
+    <div class="hero-section">
+        <h1>Bienvenido al <span class="highlight">Casino Virtual</span></h1>
+        <p class="hero-subtitle">Pon a prueba tu suerte, gestiona tus saldos y vive la emoción del juego de forma segura.</p>
+        
+        <div class="hero-buttons">
+            {% if session.get('idUsuario') %}
+                <a href="{{ url_for('billetera.panel') }}" class="btn-main">Ir a mi Panel</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="btn-main">Iniciar Sesión</a>
+                <a href="{{ url_for('auth.register') }}" class="btn-outline">Registrarse</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Advertencia estilo paquete de cigarrillos -->
+    <div class="warning-box">
+        <div class="warning-title">ADVERTENCIA DEL MINISTERIO DE SUERTE</div>
+        <p class="warning-text">
+            <strong>EL JUEGO COMPULSIVO ES PERJUDICIAL PARA LA SALUD FINANCIERA Y MENTAL.</strong> 
+            Las apuestas no son un método de inversión ni una solución para deudas. Diviértete con responsabilidad, establece límites claros y recuerda que la casa siempre tiene calculadora.
+        </p>
+    </div>
+</div>
+{% endblock %}

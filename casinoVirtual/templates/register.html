@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión - Casino Virtual{% endblock %}
+
+{% block content %}
+<div class="tu-contenido-propio">
     <h1>registro de Sesion</h1>
     <form action="/register" method="post">
     <label for="correo">Correo: </label><br>
@@ -29,6 +27,7 @@
     
     <button type="submit">Enviar</button>
     </form>
+    <div class="tu-contenido-propio">
     {% if error %}<p>{{ error }}</p>{% endif %}
-</body>
-</html>
+    </div>
+{% endblock %}

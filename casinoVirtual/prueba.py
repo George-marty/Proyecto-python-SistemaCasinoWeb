@@ -2,6 +2,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from modelo.usuario import obtener_correo_usuario,verificar_login
 from servicio.registro import registrar_usuario
 from servicio.validaciones import es_mayor_edad
+from modelo.billeteras import obtener_dato_user_wallet
+from modelo.tarjeta import ingresar_tarjeta
 """Login"""
 #correo = input("Ingresa el correo: ")
 #contraseña = input("contraseña: ")
@@ -20,3 +22,15 @@ registrar_usuario(correo, contraseña, nombre, telefono, direccion, fecha_nacimi
 fecha_nacimiento = input("Fecha: ")
 print(es_mayor_edad(fecha_nacimiento))
 """
+"""
+usuario = int(input("Ingrese id de usuario: "))
+obtener_dato_user_wallet(usuario)
+print(obtener_dato_user_wallet(usuario))
+"""
+
+usuario = int(input("Ingresar id de usuario: "))
+tipo = input("Ingrese tipo tarjeta: ")
+numero_tarjeta = int(input("Ingrese tarjeta: "))
+fecha_vencimiento = input("Fecha vencimiento: ")
+
+ingresar_tarjeta(usuario,tipo,numero_tarjeta,fecha_vencimiento)
